@@ -1,0 +1,14 @@
+name: Hit Endpoint Every 5 Minutes
+
+on:
+  schedule:
+    - cron: "*/1 * * * *" # This runs every 5 minutes
+
+jobs:
+  hit-endpoint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Hit the endpoint
+        run: |
+          curl https://github-actions-testing.onrender.com/
