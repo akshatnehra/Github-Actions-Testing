@@ -1,16 +1,15 @@
-name: Experiment
-on: 
+name: Hit Endpoint Every 5 Minutes
+
+on:
   schedule:
-  - cron: '*/5 * * * *'
+    - cron: "*/5 * * * *" # This runs every 5 minutes
+  workflow_dispatch: # Allows manual triggering
 
 jobs:
-  job1:
-    name: Debug
+  hit-endpoint:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Git checkout
-      uses: actions/checkout@v2
-      with: { ref: debug }
-    - name: List files
-      run: ls
+      - name: Hit the endpoint
+        run: |
+          curl https://github-actions-testing.onrender.com/
