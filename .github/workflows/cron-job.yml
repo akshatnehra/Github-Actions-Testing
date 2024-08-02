@@ -2,8 +2,8 @@ name: Hit Endpoint Every 5 Minutes
 
 on:
   schedule:
-    - cron: "55 * * * *"  # This runs every 5 minutes
-  workflow_dispatch:  # Allows manual triggering
+    - cron: "*/5 * * * *" # This runs every 5 minutes
+  workflow_dispatch: # Allows manual triggering
 
 jobs:
   hit-endpoint:
