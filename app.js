@@ -10,6 +10,7 @@ app.get('/', (req, res) => {
   counter++;
   
   // Send the counter value in the response
+  console.log(`This endpoint has been hit ${counter} times.`);
   res.send(`Hello World! This endpoint has been hit ${counter} times.`);
 });
 
